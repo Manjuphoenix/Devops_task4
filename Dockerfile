@@ -6,7 +6,7 @@ RUN chmod +x ./kubectl
 RUN mv ./kubectl /usr/local/bin/kubectl
 
 #Copying the required files and certificates for running the kubernetes
-mkdir /root/.kube
+RUN mkdir /root/.kube
 COPY ca.crt /root/
 COPY client.key /root/
 COPY client.crt /root/
