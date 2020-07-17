@@ -13,10 +13,8 @@ COPY client.crt /root/
 COPY config /root/.kube/
 
 #Installing the required softwares for configuring Dynamic cluster in jenkins
-RUN yum install net-tools -y
 RUN yum install java-11-openjdk.x86_64 -y
 RUN yum install openssh-server -y
-RUN yum install httpd -y
 RUN echo "root:redhat" | chpasswd
 RUN ssh-keygen -A
 CMD ["/usr/sbin/sshd", "-D"]
